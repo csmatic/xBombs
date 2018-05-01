@@ -75,9 +75,11 @@ def displayBoard(board, screen):
             # if terrain object then display at the corresponding coordinates
             if isinstance(y, Terrain):
                 if y.material == 'soft':
-                    pygame.draw.rect(screen, (150, 75, 0), pygame.Rect((indexY)*50,(indexX)*50,50,50))
+                    soft = pygame.image.load('images/breakable.jpg')
+                    screen.blit(soft, (indexY*CELLSIZE,indexX*CELLSIZE))
                 elif y.material == 'hard':
-                    pygame.draw.rect(screen, (150, 150, 150), pygame.Rect((indexY)*50,(indexX)*50,50,50))
+                    hard = pygame.image.load('images/Unbreakable.jpg')
+                    screen.blit(hard, (indexY*CELLSIZE,indexX*CELLSIZE))
                     
             # if bomb object then display at the corresponding coordinates      
             if isinstance(y, Bomb):
