@@ -193,6 +193,7 @@ class Main:
       
     #initiate pygame, window/screen and clock speed  
     pygame.init()
+    pygame.display.set_caption('xBombs')
     screen = pygame.display.set_mode([BOARDSIZEX*CELLSIZE, BOARDSIZEY*CELLSIZE])
     
     # start the music
